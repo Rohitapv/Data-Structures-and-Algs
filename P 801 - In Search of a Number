@@ -1,0 +1,22 @@
+The number just greater than the given number, with the same set of digits, if none exist, print "-1"
+
+Google : Next greatest permutation
+
+Input Format
+
+The first line contains N, the number
+
+Constraints
+
+1<=N<=10^18
+
+Output Format
+
+The number just greater than the given number, with the same set of digits, if none exist, print "-1"
+
+Sample Input 0
+
+125
+Sample Output 0
+
+152
