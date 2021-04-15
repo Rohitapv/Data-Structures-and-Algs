@@ -1,0 +1,51 @@
+Some prime numbers can be expressed as Sum of other consecutive prime numbers.
+For example
+5 = 2 + 3
+17 = 2 + 3 + 5 + 7
+41 = 2 + 3 + 5 + 7 + 11 + 13
+
+Your task is to find out how many prime numbers which satisfy this property are present in the range 3 to N subject to a constraint that summation should always start with number 2.
+
+Write code to find out number of prime numbers that satisfy the above mentioned property in a given range.
+
+Input Format:
+Each test case contains a number N <= 1000000000
+Output Format:
+Print the total number of all such prime numbers which are less than or equal to N.
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int isprime(int x){
+if(x==0||x==2||x==3){return x;}
+if(x%2==0||x%3==0){return 0;}
+int i=5;
+while(i<=sqrt(x)){
+if(x%i==0||x%(i+2)==0){return 0;}
+i+=6;
+}
+return 1;
+}
+
+int main() {
+long n,sum=2,c=0;
+scanf("%ld",&n);
+int a[100000],i=1,j;
+a[0]=2;
+for(j=3;i<100000;j+=2)
+if(isprime(j)){a[i++]=j;}
+i=1;
+while(sum<n){
+sum+=a[i];
+if(sum<=n && isprime(sum)){
+c++;
+}
+i++;
+}
+printf("%ld",c);
+    return 0;
+}
+
+
