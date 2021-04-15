@@ -35,9 +35,16 @@ TreeNode* insert(TreeNode* node, int val) {
 	else node->R = insert(node->R, val);
     return node;
 }
+
 /*******************************************************************/
 
-// Your code here
+void preorder(TreeNode* node){
+if(node){
+printf("%d ",node->x);
+preorder(node->L);
+preorder(node->R);
+}
+}
 
 /*******************************************************************/
 
